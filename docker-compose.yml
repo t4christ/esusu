@@ -54,7 +54,7 @@ services:
     restart: always
     ports:
      - "25:25"
-    env_file: .env
+    env_file: .env_app
     networks:
       - smtp_nw
 
