@@ -7,7 +7,7 @@ before_install:
 
 
 script:
-  - docker-compose up 
+  - docker-compose up -d
   - docker-compose exec api python manage.py test
 
 after_success:
