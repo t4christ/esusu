@@ -3,7 +3,8 @@ services:
   - docker
 
 before_install:
-  - docker-compose build 
+  - docker-compose up --build 
+
 
 script:
   - docker-compose exec api python3 manage.py -m unittest test
