@@ -1,0 +1,13 @@
+Django
+django-cors-headers
+django-redis
+djangorestframework
+djangorestframework-jwt
+python-dotenv
+psycopg2-binary
+gunicorn
+
+
+
+
+

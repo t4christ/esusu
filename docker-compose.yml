@@ -1,0 +1,74 @@
+version: '3'
+
+services:
+
+  db:
+    restart: always
+    image: postgres:alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data/
+    networks:
+      - db_nw
+  api:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.dev
+    container_name: web_api
+    command: /bin/sh -c "gunicorn cowry.wsgi:application --bind 0.0.0.0:8009"
+    volumes:
+      - ./app:/var/www/app/
+    restart: always
+    depends_on:
+      - db
+      - redis
+    env_file: .env
+    networks:
+      - db_nw
+      - redis_nw
+      - api_nw
+      - smtp_nw
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./app/static:/var/www/app/static
+      - ./app/media:/var/www/app/media
+    ports:
+      - "8009:80"
+    depends_on:
+      - api
+    networks:
+      - api_nw
+  redis:
+    image: 'redis:latest'
+    ports:
+      - "6379:6379"
+    networks:
+      - redis_nw
+
+
+  smtp:
+    image: namshi/smtp
+    container_name: smtp_relay
+    restart: always
+    ports:
+     - "25:25"
+    env_file: .env
+    networks:
+      - smtp_nw
+
+volumes:
+  db_data:
+
+
+networks:
+  db_nw:
+    driver: bridge
+  redis_nw:
+    driver: bridge
+  api_nw:
+    driver: bridge
+  smtp_nw:
+    driver: bridge
