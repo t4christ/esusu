@@ -3,15 +3,15 @@ services:
   - docker
 
 before_install:
-  - docker-compose build
+  - docker-compose build api
 
 script:
-  - docker-compose exec api_1 python3 manage.py -m unittest test
+  - docker-compose exec api python3 manage.py -m unittest test
 
-# after_success:
-#   - docker build -t texplode/api  ./
-#   - docker build -t texplode/nginx  ./nginx
-#   - docker build -t texplode/smtp  ./docker-smtp
+after_success:
+  - docker build -t texplode/api  ./
+  - docker build -t texplode/nginx  ./nginx
+  - docker build -t texplode/smtp  ./docker-smtp
 
 
 # Login to Docker 
