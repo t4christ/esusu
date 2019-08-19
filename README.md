@@ -29,6 +29,7 @@ Esusu Confam Ltd is a Co-operative organization which digitalises their operatio
 - Admin user can create a co-operate account group.
 - Admin user can update a co-operate account group.
 - Admin user can view all members in a group.
+- Admin user can send a user invite link.
 - User can join a group and save.
 - User can update savings account.
 - User can search groups.
