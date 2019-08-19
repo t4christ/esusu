@@ -1,8 +1,8 @@
-.env
-.env.db
+.env_app
+.env_db
 db.sqlite3
 /app/cowry/*__pycache__
-/app/savings/*__pycache__
+/app/cowry/*__pycache__
 /app/cowry/*.pyc
 /app/savings/*.pyc
 /app/static

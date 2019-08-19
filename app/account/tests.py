@@ -93,12 +93,12 @@ class UserUpdateDeleteAPIViewTestCase(APITestCase):
         self.api_authentication()
 
     def api_authentication(self):
-           self.client.credentials(HTTP_AUTHORIZATION='token ' + self.user.token)
+           self.client.credentials(HTTP_AUTHORIZATION='Token ' + self.user.token)
      
     
     def test_update_user(self):
-
-        response = self.client.patch(self.url,{"full_name":self.full_name,
+    
+        response = self.client.put(self.url,{"full_name":self.full_name,
                                     "phone_number":self.phone_number,
                                     },format='json')
         response_data = json.loads(response.content)
@@ -110,4 +110,4 @@ class UserUpdateDeleteAPIViewTestCase(APITestCase):
             
             response = self.client.delete(reverse("account:delete_user",
                         kwargs={"pk": self.user.pk}))
-            self.assertEqual(204, response.status_code)
+            self.assertEqual(200, response.status_code)
