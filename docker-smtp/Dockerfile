@@ -1,7 +1,7 @@
 FROM alpine
 
 RUN apk update && \
-    apk add install -y exim4-daemon-light && \
+    apk add install exim4-daemon-light && \
     apk add clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     find /var/log -type f | while read f; do echo -ne '' > $f; done;
