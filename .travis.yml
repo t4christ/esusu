@@ -37,6 +37,7 @@ deploy:
   env: EsusuDocker-env 
   bucket_name: elasticbeanstalk-us-east-2-632874205370
   bucket_path: mulit-docker
+  
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
