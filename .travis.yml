@@ -24,9 +24,9 @@ after_success:
 
 # Take images and push them to dockerhub
 
-  - docker push texplode/web_api
+  - docker push texplode/esusu_api
   - docker push texplode/nginx
-  - docker push texplode/docker-smtp
+  - docker push texplode/esusu_smtp
 
 
 
