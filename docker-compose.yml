@@ -49,8 +49,9 @@ services:
 
 
   smtp:
-    image: namshi/smtp
-    container_name: smtp_relay
+    build:
+      context: ./docker-smtp
+      dockerfile: Dockerfile.dev
     restart: always
     ports:
      - "25:25"
