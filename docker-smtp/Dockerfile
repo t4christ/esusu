@@ -1,6 +1,6 @@
 FROM alpine:3.4
 
-RUN apt-get update && \
+RUN apk update && \
     apk add install -y exim4-daemon-light && \
     apk add clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
