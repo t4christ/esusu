@@ -1,4 +1,4 @@
-FROM alpine
+FROM ubuntu
 
 RUN apt-get update && \
     apk add install -y exim4-daemon-light && \
