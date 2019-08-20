@@ -1,4 +1,5 @@
-FROM namshi/smtp
+FROM namshi/smtp-alpine
+
 RUN apt-get update && \
     apk add install -y exim4-daemon-light && \
     apk add clean && \
