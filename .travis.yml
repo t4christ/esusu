@@ -17,14 +17,14 @@ after_success:
 
 
 # Login to Docker 
-#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 
-# # Take images and push them to dockerhub
+# Take images and push them to dockerhub
 
-#   - docker push texplode/api
-#   - docker push texplode/nginx
-#   - docker push texplode/docker-smtp
+  - docker push texplode/web_api
+  - docker push texplode/nginx
+  - docker push texplode/docker-smtp
 
 
 

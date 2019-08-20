@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name":"web_api",
+            "image":"texplode/web_api",
+            "hostname": "api",
+            "essential": false,
+            "memory": 128
+        },
+
+        {
+            "name":"smtp",
+            "image":"texplode/docker-smtp",
+            "hostname": "smtp",
+            "essential": false,
+            "memory": 128
+        },
+
+        {
+            "name":"nginx",
+            "image":"texplode/nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort":80
+                }
+            ],
+            "links":["web_api","smtp"],
+            "memory": 128
+        }
+
+    ]
+}
