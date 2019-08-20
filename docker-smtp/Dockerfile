@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM alpine
 
 RUN apk update && \
     apk add install -y exim4-daemon-light && \
