@@ -11,9 +11,9 @@ script:
   - docker-compose exec api python manage.py test
 
 after_success:
-  - docker build -t texplode/api  ./app
+  - docker build -t texplode/esusu_api  ./app
   - docker build -t texplode/nginx  ./nginx
-  - docker build -t texplode/smtp  ./docker-smtp
+  - docker build -t texplode/esusu_smtp  ./docker-smtp
 
 
 # Login to Docker 
