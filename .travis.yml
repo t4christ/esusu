@@ -9,6 +9,8 @@ before_install:
 script:
   - docker-compose up -d
   - docker-compose exec api python manage.py test
+  - docker-compose down
+
 
 after_success:
   - docker build -t texplode/esusu_api  ./app
