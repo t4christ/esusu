@@ -11,12 +11,14 @@ UpdateSavingAPIView,
 GroupMemberListAPIView,
 SearchGroupAPIView,
 SendInviteAPIView,
-InviteCreateSavingAPIView
+InviteCreateSavingAPIView,
+HomeAPIView
 )
 
 app_name='savings'
 
 urlpatterns = [
+    path('', HomeAPIView.as_view(),name="home"),
     path('group_admin', GroupAdminAPIView.as_view(), name='is_group_admin'),
     path('update_group/<int:id>', UpdateGroupAdminAPIView.as_view(),name='update_group'),
     path('create_group', CreateGroupAPIView.as_view(), name='create_group'),

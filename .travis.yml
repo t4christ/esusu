@@ -30,16 +30,13 @@ after_success:
 
 
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: us-east-2
-#   app: mulit-docker
-#   env: MulitDocker-env
-#   bucket_name: elasticbeanstalk-us-east-2-632874205370
-#   bucket_path: docker-react
-#   on:
-#     branch: master
-
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key:
-#     secure: "$AWS_SECRET_KEY"
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: esusu-docker
+  env: EsusuDocker-env 
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"

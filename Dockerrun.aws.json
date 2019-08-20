@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name":"web_api",
-            "image":"texplode/web_api",
+            "image":"texplode/esusu_api",
             "hostname": "api",
             "essential": false,
             "memory": 128
@@ -11,7 +11,7 @@
 
         {
             "name":"smtp",
-            "image":"texplode/docker-smtp",
+            "image":"texplode/esusu_smtp",
             "hostname": "smtp",
             "essential": false,
             "memory": 128

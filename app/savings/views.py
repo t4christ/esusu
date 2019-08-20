@@ -22,6 +22,14 @@ from django.conf import settings
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
 
+class HomeAPIView(APIView):
+    permission_classes = (AllowAny,)
+    def get(self,request,format=None):
+        return Response({"Message":"You are welcome to esusu"},status=status.HTTP_200_OK)
+
+
+
+
 class SearchGroupAPIView(ListAPIView):
     # Allow only authenticated users to hit this endpoint.
     serializer_class = GetGroupSerializer
