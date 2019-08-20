@@ -5,7 +5,7 @@ from django.core import serializers
 from rest_framework import status
 from datetime import date,timedelta,datetime
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated,AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
