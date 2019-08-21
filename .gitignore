@@ -1,5 +1,6 @@
 .env_app
 .env_db
+*.pem
 db.sqlite3
 /app/cowry/*__pycache__
 /app/cowry/*__pycache__
