@@ -13,7 +13,7 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile.dev
-    # command: /bin/sh -c "gunicorn cowry.wsgi:application --bind 0.0.0.0:8009"
+    command: /bin/sh -c "gunicorn cowry.wsgi:application --bind 0.0.0.0:8009"
     volumes:
       - ./app:/var/www/app/
     restart: always
