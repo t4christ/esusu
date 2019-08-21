@@ -12,11 +12,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-import dotenv
-from dotenv import load_dotenv
-dotenv.load_dotenv()
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -65,13 +60,6 @@ CORS_ORIGIN_WHITELIST=(
         'http://192.168.99.100:8009',
         )
 
-
-EMAIL_HOST=os.environ.get('SMARTHOST_ADDRESS')
-EMAIL_PORT=os.environ.get('SMARTHOST_PORT')
-EMAIL_HOST_USER=os.environ.get('SMARTHOST_USER')
-EMAIL_HOST_PASSWORD=os.environ.get('SMARTHOST_PASSWORD')
-EMAIL_TIMEOUT = 30
-EMAIL_USE_TLS = False
 
 
 
@@ -142,11 +130,11 @@ EMAIL_USE_TLS = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('POSTGRES_DATABASE'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT'),
+        'NAME': os.environ.get('POSTGRES_DATABASE','postgres'),
+        'USER': os.environ.get('POSTGRES_USER','postgres'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD','postgres'),
+        'HOST': os.environ.get('POSTGRES_HOST','postgres'),
+        'PORT': os.environ.get('POSTGRES_PORT','5432'),
     }
 }
 
