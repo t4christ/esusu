@@ -7,3 +7,8 @@ db.sqlite3
 /app/savings/*.pyc
 /app/static
 /app/media
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

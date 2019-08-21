@@ -13,14 +13,14 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile.dev
-    command: /bin/sh -c "gunicorn cowry.wsgi:application --bind 0.0.0.0:8009"
+    # command: /bin/sh -c "gunicorn cowry.wsgi:application --bind 0.0.0.0:8009"
     volumes:
       - ./app:/var/www/app/
     restart: always
     depends_on:
       - db
       - redis
-    # env_file: .env_app
+    env_file: .env_app
     networks:
       - db_nw
       - redis_nw
@@ -54,7 +54,7 @@ services:
     restart: always
     ports:
      - "25:25"
-    # env_file: .env_app
+    env_file: .env_app
     networks:
       - smtp_nw
 

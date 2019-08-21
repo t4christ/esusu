@@ -57,7 +57,7 @@ AUTH_USER_MODEL = 'account.User'
 CORS_ORIGIN_ALLOW_ALL=True
 CORS_ALLOW_CREDENTIALS=True
 CORS_ORIGIN_WHITELIST=(
-        'http://192.168.99.100:8009',
+        '*',
         )
 
 
@@ -125,6 +125,13 @@ WSGI_APPLICATION = 'cowry.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+EMAIL_HOST=os.environ.get('SMARTHOST_ADDRESS')
+EMAIL_PORT=os.environ.get('SMARTHOST_PORT')
+EMAIL_HOST_USER=os.environ.get('SMARTHOST_USER')
+EMAIL_HOST_PASSWORD=os.environ.get('SMARTHOST_PASSWORD')
+EMAIL_TIMEOUT = 30
+EMAIL_USE_TLS = False
 
 
 DATABASES = {
