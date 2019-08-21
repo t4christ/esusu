@@ -89,19 +89,19 @@
             },
             {
                 "host": {
-                    "sourcePath": "./app"
+                    "sourcePath": "app_api"
                 },
                 "name": "_App"
             },
             {
                 "host": {
-                    "sourcePath": "./app/static"
+                    "sourcePath": "app_api/static"
                 },
                 "name": "_AppStatic"
             },
             {
                 "host": {
-                    "sourcePath": "./app/media"
+                    "sourcePath": "app_api/media"
                 },
                 "name": "_AppMedia"
             }
