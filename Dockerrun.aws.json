@@ -95,13 +95,13 @@
             },
             {
                 "host": {
-                    "sourcePath": "app_api/static"
+                    "sourcePath": "app_static"
                 },
                 "name": "_AppStatic"
             },
             {
                 "host": {
-                    "sourcePath": "app_api/media"
+                    "sourcePath": "app_media"
                 },
                 "name": "_AppMedia"
             }
