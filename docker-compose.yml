@@ -57,6 +57,7 @@ services:
     # env_file: .env_app
     networks:
       - smtp_nw
+      - api_nw
 
 volumes:
   db_data:
