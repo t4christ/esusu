@@ -137,11 +137,11 @@ EMAIL_USE_TLS = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('POSTGRES_DATABASE','postgres'),
-        'USER': os.environ.get('POSTGRES_USER','postgres'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD','postgres'),
-        'HOST': os.environ.get('POSTGRES_HOST','postgres'),
-        'PORT': os.environ.get('POSTGRES_PORT','5432'),
+        'NAME': os.environ['POSTGRES_DATABASE'],
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': os.environ['POSTGRES_HOST','postgres'],
+        'PORT': os.environ['POSTGRES_PORT','5432'],
     }
 }
 
