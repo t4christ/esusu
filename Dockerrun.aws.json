@@ -7,7 +7,7 @@
                     "-c",
                     "python manage.py migrate && gunicorn cowry.wsgi:application --bind 0.0.0.0:8009"
                 ],
-                "essential": true,
+                "essential": false,
                 "image":"texplode/esusu_api",
                 "memory": 128,
                 "mountPoints": [
@@ -21,7 +21,7 @@
                 
             },
             {
-                "essential": true,
+                "essential": false,
                 "image": "postgres:alpine",
                 "memory": 128,
                 "mountPoints": [
@@ -55,7 +55,7 @@
                 ]
             },
             {
-                "essential": true,
+                "essential": false,
                 "image": "redis:latest",
                 "name": "redis",
                 "memory": 128,
@@ -67,7 +67,7 @@
                 ]
             },
             {
-                "essential": true,
+                "essential": false,
                 "image":"texplode/esusu_smtp",
                 "name": "smtp",
                 "memory": 128,
