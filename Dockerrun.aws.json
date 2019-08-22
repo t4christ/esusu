@@ -50,7 +50,7 @@
                 "portMappings": [
                     {
                         "containerPort": 80,
-                        "hostPort": 8009
+                        "hostPort": 80
                     }
                 ]
             },
