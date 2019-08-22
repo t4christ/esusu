@@ -12,7 +12,7 @@ COPY ./requirements.txt /requirements.txt
 #run package installations
 RUN apk update && \
     apk add --virtual build-deps gcc python-dev musl-dev && \
-    apk add postgresql-dev && pip install -r /requirements.txt
+    apk add postgresql-dev && apk add nano && pip install -r /requirements.txt
 
 
 
