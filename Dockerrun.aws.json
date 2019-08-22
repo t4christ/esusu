@@ -36,6 +36,7 @@
                 "essential": true,
                 "image":"texplode/nginx",
                 "memory": 256,
+                "links":["api"],
                 "mountPoints": [
                     {
                         "containerPath": "/var/www/app/static",
