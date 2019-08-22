@@ -9,7 +9,7 @@
                 ],
                 "essential": false,
                 "image":"texplode/esusu_api",
-                "memory": 128,
+                "memory": 512,
                 "mountPoints": [
                     {
                         "containerPath": "/var/www/app/",
@@ -23,7 +23,7 @@
             {
                 "essential": false,
                 "image": "postgres:alpine",
-                "memory": 128,
+                "memory": 512,
                 "mountPoints": [
                     {
                         "containerPath": "/var/lib/postgresql/data/",
@@ -35,7 +35,7 @@
             {
                 "essential": true,
                 "image":"texplode/nginx",
-                "memory": 128,
+                "memory": 512,
                 "mountPoints": [
                     {
                         "containerPath": "/var/www/app/static",
@@ -58,7 +58,7 @@
                 "essential": false,
                 "image": "redis:latest",
                 "name": "redis",
-                "memory": 128,
+                "memory": 512,
                 "portMappings": [
                     {
                         "containerPort": 6379,
@@ -70,7 +70,7 @@
                 "essential": false,
                 "image":"texplode/esusu_smtp",
                 "name": "smtp",
-                "memory": 128,
+                "memory": 512,
                 "portMappings": [
                     {
                         "containerPort": 25,
