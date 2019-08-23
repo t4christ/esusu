@@ -120,6 +120,7 @@ WSGI_APPLICATION = 'cowry.wsgi.application'
 #     }
 # }
 
+EMAIL_FROM = "esusu@savings.com"
 EMAIL_HOST=os.environ.get('SMARTHOST_ADDRESS')
 EMAIL_PORT=os.environ.get('SMARTHOST_PORT')
 EMAIL_HOST_USER=os.environ.get('SMARTHOST_USER')
