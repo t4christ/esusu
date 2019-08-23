@@ -36,13 +36,13 @@ Esusu Confam Ltd is a Co-operative organization which digitalises their operatio
 - User can update savings account.
 - User can search groups.
 
-<!-- 
+
 ## API Documentation
- Access api documentation through this link [Here](https://mozio3.docs.apiary.io/#) -->
+ Access api documentation through this link [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/2d2dfeb1272ea4deacb7)
 
 
-<!-- ## Base Url
-Project base url can be accessed using this link [Here](https://mozio-trans.herokuapp.com/api) -->
+## Base Url
+Project base url can be accessed using this link [Here](http://esusudocker-env.nb2m2kzsxk.us-east-2.elasticbeanstalk.com/api/v1/)
 
 ## Built With
 - python/djangorestframework

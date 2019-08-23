@@ -8,6 +8,7 @@ before_install:
 
 script:
   - docker-compose up -d
+  - python manage.py run test
   - docker-compose down
 
 
@@ -29,15 +30,15 @@ after_success:
 
 
 
-deploy:
-  provider: elasticbeanstalk
-  region: us-east-2
-  app: esusu-docker
-  env: EsusuDocker-env 
-  bucket_name: elasticbeanstalk-us-east-2-632874205370
-  bucket_path: docker-multi
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+# deploy:
+#   provider: elasticbeanstalk
+#   region: xxxxxxxxx
+#   app: xxxxxxxxx
+#   env: xxxxxxxxx
+#   bucket_name: xxxxxxxxxxxxxxxxxx
+#   bucket_path: xxxxxxxxxxxxxxx
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: "$AWS_SECRET_KEY"
