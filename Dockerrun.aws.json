@@ -5,7 +5,7 @@
                 "command": [
                     "/bin/sh",
                     "-c",
-                    "python manage.py migrate && gunicorn cowry.wsgi:application --bind 0.0.0.0:8000"
+                    "python manage.py migrate && gunicorn cowry.wsgi:application --bind 0.0.0.0:8000 && python manage.py collectstatic"
                 ],
                 "essential": false,
                 "image":"texplode/esusu_api",
