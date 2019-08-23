@@ -242,7 +242,7 @@ class SendInviteAPIView(APIView):
                 group_name = GroupAccount.objects.get(name=name)
                 code = InviteCode(request)
                 get_invite = code.invite_code(group_name.name)
-                link = 'http://192.168.99.100:8009/'
+                link = request.get_full_path()
                 message = f"{request.user.full_name} has invited you to join {group_name.name} co-operate savings"
                 mail.send_mail('Cowrywise Invite',f'{message} via link {link}{get_invite}',settings.EMAIL_HOST_USER,[email])
                 return Response({"message":"Invite sent"}, status=status.HTTP_200_OK)
