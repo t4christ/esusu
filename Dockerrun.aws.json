@@ -9,6 +9,7 @@
                 ],
                 "essential": false,
                 "image":"texplode/esusu_api",
+                "links":["redis","smtp"],
                 "memory": 128,
                 "mountPoints": [
                     {
@@ -40,11 +41,11 @@
                 "mountPoints": [
                     {
                         "containerPath": "/var/www/app/static",
-                        "sourceVolume": "_AppStatic"
+                        "sourceVolume": "/app/static"
                     },
                     {
                         "containerPath": "/var/www/app/media",
-                        "sourceVolume": "_AppMedia"
+                        "sourceVolume": "/app/media"
                     }
                 ],
                 "name": "nginx",
