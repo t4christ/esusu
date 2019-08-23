@@ -242,7 +242,7 @@ class SendInviteAPIView(APIView):
                 group_name = GroupAccount.objects.get(name=name)
                 code = InviteCode(request)
                 get_invite = code.invite_code(group_name.name)
-                link = request.get_full_path()
+                link = f"http://esusudocker-env.nb2m2kzsxk.us-east-2.elasticbeanstalk.com/api/v1/register/{get_invite}"
                 message = f"{request.user.full_name} has invited you to join {group_name.name} co-operate savings"
                 mail.send_mail('Cowrywise Invite',f'{message} via link {link}{get_invite}',settings.EMAIL_HOST_USER,[email])
                 return Response({"message":"Invite sent"}, status=status.HTTP_200_OK)
