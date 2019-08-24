@@ -80,33 +80,6 @@
                     }
                 ]
             }
-        ],
-        "family": "",
-        "volumes": [
-            {
-                "host": {
-                    "sourcePath": "db_data"
-                },
-                "name": "Db_Data"
-            },
-            {
-                "host": {
-                    "sourcePath": "app_api"
-                },
-                "name": "_App"
-            },
-            {
-                "host": {
-                    "sourcePath": "app_static"
-                },
-                "name": "_AppStatic"
-            },
-            {
-                "host": {
-                    "sourcePath": "app_media"
-                },
-                "name": "_AppMedia"
-            }
         ]
     }
 
