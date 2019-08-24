@@ -5,40 +5,33 @@ services:
 before_install:
   - docker-compose build
 
-
 script:
   - docker-compose up -d
   - docker-compose exec api python manage.py test
   - docker-compose down
-
 
 after_success:
   - docker build -t texplode/esusu_api  ./app
   - docker build -t texplode/nginx  ./nginx
   - docker build -t texplode/esusu_smtp  ./docker-smtp
 
-
-# Login to Docker 
+  # Login to Docker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-
-# Take images and push them to dockerhub
+  # Take images and push them to dockerhub
 
   - docker push texplode/esusu_api
   - docker push texplode/nginx
   - docker push texplode/esusu_smtp
-
-
-
-deploy:
-   provider: elasticbeanstalk
-   region: us-east-2
-   app: esusu-docker
-   env: EsusuDocker-env 
-   bucket_name: elasticbeanstalk-us-east-2-632874205370
-   bucket_path: docker-multi
-   on:
-     branch: master
-   access_key_id: $AWS_ACCESS_KEY
-   secret_access_key:
-     secure: "$AWS_SECRET_KEY"
+# deploy:
+#   provider: elasticbeanstalk
+#   region: xxxxxxxxx
+#   app: xxxxxxxxx
+#   env: xxxxxxxxx
+#   bucket_name: xxxxxxxxxxxxxxxxxx
+#   bucket_path: xxxxxxxxxxxxxxx
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: "$AWS_SECRET_KEY"
