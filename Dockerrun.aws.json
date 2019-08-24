@@ -11,13 +11,6 @@
                 "image":"texplode/esusu_api",
                 "links":["redis","smtp"],
                 "memory": 128,
-                "mountPoints": [
-                    {
-                        "containerPath": "/var/www/app/",
-                        "sourceVolume": "_App"
-                    }
-                ],
-                
                 "name": "api"
                 
             },
@@ -25,12 +18,6 @@
                 "essential": false,
                 "image": "postgres:alpine",
                 "memory": 128,
-                "mountPoints": [
-                    {
-                        "containerPath": "/var/lib/postgresql/data/",
-                        "sourceVolume": "Db_Data"
-                    }
-                ],
                 "name": "db"
             },
             {
@@ -38,16 +25,6 @@
                 "image":"texplode/nginx",
                 "memory": 256,
                 "links":["api"],
-                "mountPoints": [
-                    {
-                        "containerPath": "/var/www/app/static",
-                        "sourceVolume": "/app/static"
-                    },
-                    {
-                        "containerPath": "/var/www/app/media",
-                        "sourceVolume": "/app/media"
-                    }
-                ],
                 "name": "nginx",
                 "portMappings": [
                     {
