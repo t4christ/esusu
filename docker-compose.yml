@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
       - redis
-    env_file: .env_app
+    # env_file: .env_app
     networks:
       - db_nw
       - redis_nw
@@ -54,7 +54,7 @@ services:
     restart: always
     ports:
      - "25:25"
-    env_file: .env_app
+    # env_file: .env_app
     networks:
       - smtp_nw
       - api_nw
