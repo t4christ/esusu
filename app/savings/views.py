@@ -116,7 +116,7 @@ class CreateGroupAPIView(APIView):
             
         if request.user.is_group_admin:
             serializer.save(group_admin=request.user,end_date=set_interval)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response({"message":"You must be a group admin to create a coperate account"})
 
@@ -171,7 +171,7 @@ class CreateSavingAPIView(APIView):
                 return Response({"message":"You can only save ones in a period interval"})
             serializer.save(end_date=group.end_date,member=request.user,group=group,\
                             member_name=request.user.full_name)
-            return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         except:
             return Response({"message":"Group name does not exist"})
 
@@ -242,9 +242,12 @@ class SendInviteAPIView(APIView):
                 group_name = GroupAccount.objects.get(name=name)
                 code = InviteCode(request)
                 get_invite = code.invite_code(group_name.name)
-                link = f"http://esusudocker-env.nb2m2kzsxk.us-east-2.elasticbeanstalk.com/api/v1/register/{get_invite}"
-                message = f"{request.user.full_name} has invited you to join {group_name.name} co-operate savings"
-                mail.send_mail('Cowrywise Invite',f'{message} via link {link}{get_invite}',settings.EMAIL_HOST_USER,[email])
+                link = f"http://esusudocker-env.nb2m2kzsxk.us-east-2.elasticbeanstalk.com\
+                        /api/v1/register/{get_invite}"
+                message = f"{request.user.full_name} has invited you to join {group_name.name}\
+                             co-operate savings"
+                mail.send_mail('Cowrywise Invite',f'{message} via link {link}{get_invite}',\
+                                settings.EMAIL_HOST_USER,[email])
                 return Response({"message":"Invite sent"}, status=status.HTTP_200_OK)
             except Exception as e:
                 return Response({"message":f"{e}"})
